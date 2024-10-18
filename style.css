@@ -1,4 +1,4 @@
-*c{
+*c {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,8 +16,10 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    background-image:
-    url(driedflower2.png);height: 360px;
+    background-image: url(driedflower2.png);
+    height: 360px;
+    background-size: cover;
+    background-position: center;
 }
 
 nav ul {
@@ -63,7 +65,66 @@ footer {
     color: white;
     margin-top: 20px;
 }
+
 a {
-    color:#333 ;
+    color: #333;
     font-family: 'Arial', sans-serif;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .character {
+        font-size: 1rem;
+    }
+
+    header {
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 1.2rem;
+        padding: 15px 0;
+        height: 180px;
+    }
+
+    nav ul li {
+        padding: 8px 0;
+    }
+
+    section {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .character {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 5px;
+    }
 }
