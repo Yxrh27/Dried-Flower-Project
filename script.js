@@ -1,18 +1,22 @@
-function showSection(sectionId) {
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.add('hidden');
-    });
-    document.getElementById(sectionId).classList.remove('hidden');
+
+// ID of the latest chapter. Update this whenever a new chapter is added.
+const latestChapterId = 'chapter15';
+
+// Check if the user has seen the latest chapter notification
+function notifyNewChapter() {
+    const lastSeenChapter = localStorage.getItem('lastSeenChapter');
+    
+    // If the user hasn't seen the latest chapter notification, show the banner
+    if (lastSeenChapter !== latestChapterId) {
+        document.getElementById('notification-banner').classList.remove('hidden');
+    }
 }
 
-function loadChapter(chapterId) {
-    const chapterContent = {
-        chapter1: "<h3>A Flower's Reflection</h3><p>This is the content of Chapter 1...</p>",
-        chapter2: "<h3>Old Stem, New Flowers</h3><p>This is the content of Chapter 2...</p>",
-        chapter3: "<h3>A Group of 4</h3><p>This is the content of Chapter 3...</p>",
-        // Add more chapters here as needed
-    };
-
-    document.getElementById('chapter-content').innerHTML = chapterContent[chapterId] || "<p>Chapter content is coming soon.</p>";
-    showSection('chapters');
+// Dismiss the notification and store the latest chapter ID as seen
+function dismissNotification() {
+    document.getElementById('notification-banner').classList.add('hidden');
+    localStorage.setItem('lastSeenChapter', latestChapterId);
 }
+
+// Run the notification check when the page loads
+document.addEventListener('DOMContentLoaded', notifyNewChapter);
