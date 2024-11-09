@@ -1,4 +1,3 @@
-
 // ID of the latest chapter. Update this whenever a new chapter is added.
 const latestChapterId = 'chapter15';
 
