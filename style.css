@@ -129,17 +129,42 @@ a {
     }
 }
 
-.notification-banner {
-    background-color: #ffeb3b;
-    color: #333;
-    padding: 10px;
+/* Notification Banner Styling */
+#notification-banner {
+    background-color: #333; /* Dark background to match the header */
+    color: #fff; /* White text for contrast */
     text-align: center;
+    padding: 10px 15px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.notification-banner.hidden {
+#notification-banner p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+#notification-banner a {
+    color: #f0c000; /* Accent color for the link */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#notification-banner button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#notification-banner.hidden {
     display: none;
 }
