@@ -1,3 +1,16 @@
+function loadChapter(chapterNumber) {
+    fetch(`/chapters/chapter${chapterNumber}.html`)
+        .then(response => response.text())
+        .then(content => {
+            document.getElementById('chapter-content').innerHTML = content;
+        })
+        .catch(error => {
+            console.error("Error loading chapter:", error);
+            document.getElementById('chapter-content').innerHTML = "<p>Sorry, this chapter couldn't be loaded.</p>";
+        });
+}
+
+
 // ID of the latest chapter. Update this whenever a new chapter is added.
 const latestChapterId = 'chapter15';
 
