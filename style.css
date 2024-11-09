@@ -128,3 +128,18 @@ a {
         padding: 5px;
     }
 }
+
+.notification-banner {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.notification-banner.hidden {
+    display: none;
+}
