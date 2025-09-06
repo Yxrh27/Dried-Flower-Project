@@ -1,0 +1,235 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
+.site-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+}
+
+a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Navigation */
+.nav ul {
+  background-color: #444;
+  overflow: hidden;
+  color: white;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  margin: 0;
+}
+
+.nav ul li {
+  display: inline;
+  padding: 20px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.cover-img {
+  width: 200px;
+  height: auto;
+  margin-right: 30px;
+  border-radius: 8px;
+}
+
+.text-content {
+  max-width: 600px;
+}
+
+.text-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  margin-bottom: 10px;
+}
+
+.buttons .btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Section Styling */
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.chapter-list li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  margin-top: 20px;
+}
+
+.site-footer a {
+  color: #f0c000;
+  text-decoration: underline;
+}
+.chapter-body {
+  line-height: 2.2; /* Double spacing for main text */
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.15em;
+}
+.chapter-body p {
+  margin-bottom: 2em;
+}
+
+/* Notification Banner Styling */
+#notification-banner {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#notification-banner p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+#notification-banner a {
+  color: #f0c000;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#notification-banner button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#notification-banner.hidden {
+  display: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav ul {
+    padding: 0;
+  }
+
+  .nav ul li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  section {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .cover-img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .site-header {
+    font-size: 1.2rem;
+    padding: 15px 0;
+    height: 180px;
+  }
+
+  .nav ul li {
+    padding: 8px 0;
+  }
+
+  section {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .site-footer {
+    padding: 5px;
+  }
+}
