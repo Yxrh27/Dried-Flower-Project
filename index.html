@@ -67,8 +67,8 @@
     <li><a href="chapter12.html">Chapter 12: Fleeting Moments</a> <span class="release-date">(Released: Oct 22, 2024)</span></li>
     <li><a href="chapter13.html">Chapter 13: A Quiet Connection</a> <span class="release-date">(Released: Oct 29, 2024)</span></li>
     <li><a href="chapter14.html">Chapter 14: Promise</a> <span class="release-date">(Released: Nov 5, 2024)</span></li>
-    <li><a href="chapter15.html">Chapter 15: Miyu's Reflection</a> <span class="release-date">(Released: Apr 12, 2024)</span></li>
-    <li><a href="chapter16.html">Chapter 16: Drift</a> <span class="release-date">(Released: Nov 9, 2024)</span></li>
+    <li><a href="chapter15.html">Chapter 15: Miyu's Reflection</a> <span class="release-date">(Released: Nov 9, 2024)</span></li>
+    <li><a href="chapter16.html">Chapter 16: Drift</a> <span class="release-date">(Released: Nov 12, 2024)</span></li>
     <li><a href="chapter17.html">Chapter 17: Weight of Silence</a> <span class="release-date">(Released: Nov 21, 2024)</span></li>
     <li><a href="chapter18.html">Chapter 18: Storm</a> <span class="release-date">(Released: Nov 23, 2024)</span></li>
     <li><a href="chapter19.html">Chapter 19: Shadow</a> <span class="release-date">(Released: Nov 27, 2024)</span></li>
@@ -91,14 +91,27 @@
   window.OneSignalDeferred = window.OneSignalDeferred || [];
   OneSignalDeferred.push(async function(OneSignal) {
     await OneSignal.init({
-      appId: "f9a0928b-cd23-499f-addc-92a7195b9298",
+      appId: "f9a0928b-cd23-499f-addc-92a7195b9298", 
       safari_web_id: "web.onesignal.auto.16fe94fe-85b7-4f18-b294-6465f1482156",
       notifyButton: {
-        enable: true,
+        enable: true, // keeps the default floating bell
       },
     });
+    
+    const btn = document.getElementById("subscribe-btn");
+    if (btn) {
+      btn.addEventListener("click", async () => {
+        const result = await OneSignal.Notifications.requestPermission();
+        if (result === "granted") {
+          alert("✅ You are subscribed for updates!");
+        } else {
+          alert("❌ You blocked notifications or closed the prompt.");
+        }
+      });
+    }
   });
 </script>
+
   <script>
   document.getElementById("subscribe-btn").addEventListener("click", function() {
     OneSignal.push(function() {
@@ -108,6 +121,7 @@
 </script>
 </body>
 </html>
+
 
 
 
