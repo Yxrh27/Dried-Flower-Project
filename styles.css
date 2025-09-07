@@ -115,6 +115,13 @@ h2 {
   margin-bottom: 10px;
 }
 
+.release-date {
+  font-size: 0.9em;
+  color: #777;
+  margin-left: 8px;
+}
+
+
 /* Footer */
 .site-footer {
   text-align: center;
@@ -233,3 +240,4 @@ h2 {
     padding: 5px;
   }
 }
+
