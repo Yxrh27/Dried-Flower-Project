@@ -34,6 +34,9 @@
           <a href="chapter1.html" class="btn">Read First</a>
           <a href="part2-chapter0.html" class="btn">Read Latest</a>
         </div>
+          <div style="text-align:center; margin: 2em 0;">
+              <button id="subscribe-btn" class="notify-btn">🔔 Subscribe for Updates</button>
+          </div>
       </div>
     </div>
   </section>
@@ -82,8 +85,30 @@
   <footer id="contact" class="site-footer">
     <p>Contact: <a href="https://www.facebook.com/haisedlcp.27" target="_blank">Facebook</a></p>
   </footer>
+
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "f9a0928b-cd23-499f-addc-92a7195b9298",
+      safari_web_id: "web.onesignal.auto.16fe94fe-85b7-4f18-b294-6465f1482156",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
+  <script>
+  document.getElementById("subscribe-btn").addEventListener("click", function() {
+    OneSignal.push(function() {
+      OneSignal.registerForPushNotifications();
+    });
+  });
+</script>
 </body>
 </html>
+
 
 
 
